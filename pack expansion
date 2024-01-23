@@ -1,0 +1,21 @@
+*In C++, pack expansion refers to the ability to expand a parameter pack into separate arguments when invoking a function or creating an object. 
+*Parameter packs are used in the context of variadic templates, where a template can accept a variable number of template arguments. 
+*Pack expansion allows you to operate on each element of the parameter pack individually.
+
+Eg:
+
+#include <iostream>
+using namespace std;
+template <typename... Args>
+void display(Args... args)
+{
+    ((cout<<args<<" "), ...);
+      
+}
+int main() {
+    display(1, 2, 3, "hello", 4.5);
+    return 0;
+}
+
+o/p:
+1 2 3 hello 4.5
